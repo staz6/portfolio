@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { styled } from "@mui/material/styles";
 import { SubText, VFlex, MHeading } from "../helpers/styles";
 import { Hidden } from '@mui/material';
@@ -96,12 +96,16 @@ const skills = [
   "SQL",
   "NoSQL",
 ];
-const Home = () => {
+const Home = ({tab}) => {
   const footerRef = useRef(null)
   const blogRef = useRef(null)
-
-   const executeScrollToFooter = () => footerRef.current.scrollIntoView() 
-   const executeScrollToBlog = () => footerRef.current.scrollIntoView() 
+  const executeScrollToFooter = () => footerRef.current.scrollIntoView() 
+   const executeScrollToBlog = () => blogRef.current.scrollIntoView() 
+  useEffect(() => {
+    if(tab==="Contact") executeScrollToFooter()
+    if(tab==="Blog") executeScrollToBlog()
+  },[tab])
+   
   const [data, setData] = useState(tmpData);
   return (
     <>
@@ -183,12 +187,12 @@ const Home = () => {
         </Grid>
         </Hidden>
       </Grid>
-      <MHeading fontSize={"2.8rem"} marginTop={"8vh"} type={"blue"}>
+      <MHeading fontSize={"2.8rem"} marginTop={"8vh"} type={"blue"} ref={blogRef}>
         <RubberBand text={"Blogs,"} />
       </MHeading>
       <br />
       <br />
-      <Grid container spacing={3} style={{ position: "relative" }}>
+      <Grid container spacing={3} style={{ position: "relative" }} >
         {data.map((val, key) => {
           return <BlogCard val={val} key={key} />;
         })}

@@ -42,16 +42,16 @@ const NavLink = styled("a")(({ theme }) => ({
     color: theme.palette.blue,
   },
 }));
-const links = ["Portfolio", "Contact", "blog"];
+const links = ["Portfolio", "Contact", "Blog"];
 
-function index() {
+function index({handleSetTab}) {
   const GetLinks = () => {
     return links.map((val, key) => {
       return (
         <NavLink
           key={key}
-          href="/"
           style={key === 2 ? { paddingRight: "0px" } : null}
+          onClick={(e)=>{handleSetTab(val)}}
         >
           {val}
         </NavLink>

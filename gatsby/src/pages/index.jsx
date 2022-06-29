@@ -23,11 +23,16 @@ const theme = createTheme({
 
 // markup
 const IndexPage = () => {
+  const [tab,setTab] =React.useState("Portfolio")
+
+  const handleSetTab = (value) => {
+    setTab(value)
+  }
   return (
     <ThemeProvider theme={theme}>
       <MainLayout>
-        <Navbar />
-        <Home />
+        <Navbar  handleSetTab={handleSetTab}/>
+        <Home tab={tab}/>
       </MainLayout>
     </ThemeProvider>
   );
