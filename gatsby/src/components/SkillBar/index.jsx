@@ -1,10 +1,10 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
 
-const Chart = styled("div")(({ theme,width,color }) => ({
+const Chart = styled("div")(({ theme, width, color }) => ({
   marginBottom: "2rem",
   "& span": {
-    color:"#fff",
+    color: "#fff",
     fontSize: "18px",
     marginBottom: "7px",
     display: "block",
@@ -21,12 +21,12 @@ const Chart = styled("div")(({ theme,width,color }) => ({
     },
   },
 }));
-function SkillBar({ text, width,color }) {
+function SkillBar({ text, width, color }) {
   return (
     <Chart width={width} color={color}>
       <span>{text}</span>
       <footer>
-          <div width={width}></div>
+        <div width={width}></div>
       </footer>
     </Chart>
   );

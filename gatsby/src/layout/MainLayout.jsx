@@ -5,7 +5,7 @@ const Container = styled("div")({
   width: "90%",
   marginLeft: "auto",
   marginRight: "auto",
-  paddingBottom:"5vh"
+  paddingBottom: "10vh",
 });
 
 function MainLayout(props) {

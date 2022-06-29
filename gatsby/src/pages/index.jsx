@@ -9,13 +9,13 @@ const theme = createTheme({
     blue: "#08fdd8",
     main: "#fff",
     subText: "#aeaeae",
-    bg:"#1d1d1d"
+    bg: "#1d1d1d",
   },
-  blogs:{
-    net:"#a62dd8",
-    react:"#61dafb",
-    htb:"#bbff34"
-  }
+  blogs: {
+    net: "#a62dd8",
+    react: "#61dafb",
+    htb: "#bbff34",
+  },
 });
 
 // markup

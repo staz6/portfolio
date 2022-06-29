@@ -13,6 +13,9 @@ body {
     font-weight: 400;
     background-color: #1d1d1d;
   }
+  html {
+    scroll-behavior: smooth;
+}
   html,
   body,
   div,

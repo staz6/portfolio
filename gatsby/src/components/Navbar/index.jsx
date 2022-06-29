@@ -1,10 +1,10 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
+import { Grid } from "@mui/material";
 
-const Container = styled("div")({
+const Container = styled(Grid)({
   width: "100%",
   height: "8vh",
-  display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
   backgroundColor: "transparent",
@@ -17,10 +17,10 @@ const Link = styled("a")(({ theme }) => ({
   fontSize: "1.3rem",
 }));
 
-const NavMenu = styled("div")(({ theme }) => ({
+const NavMenu = styled(Grid)(({ theme }) => ({
   position: "relative",
-  // float:"right",
   color: theme.palette.main,
+  textAlign:"right"
 }));
 const NavLink = styled("a")(({ theme }) => ({
   position: "relative",
@@ -58,9 +58,11 @@ function index() {
     });
   };
   return (
-    <Container>
+    <Container container>
+      <Grid item lg={6} md={6}>
       <Link href="/">Muhammad Aahad</Link>
-      <NavMenu>
+      </Grid>
+      <NavMenu item lg={6} md={6}>
         <GetLinks />
       </NavMenu>
     </Container>
