@@ -22,19 +22,23 @@ const HeroSection = styled(VFlex)({
 const Title = styled("h1")(({ theme }) => ({
   color: theme.palette.main,
   fontSize: "3rem",
+  fontFamily:"Poppins"
 }));
 const SubHeading = styled(SubText)(({ theme }) => ({
   fontSize: "20px",
   marginTop: "10px",
   marginLeft: "4px",
+  fontFamily:"Poppins"
 }));
 const ObjectiveText = styled(SubText)(({ theme,fontSize,marginTop }) => ({
   fontSize: fontSize ? fontSize : "0.9rem",
   lineHeight: "1.3rem",
-  marginTop:marginTop ? marginTop : "10px"
+  marginTop:marginTop ? marginTop : "10px",
+  fontFamily:"Poppins"
 }));
 const Bar = styled('span')(({theme}) => ({
-  color:theme.palette.blue
+  color:theme.palette.blue,
+  fontFamily:"Poppins"
 }))
 
 const SocialLinkContainer = styled("div")(({ theme,marginTop }) => ({
@@ -42,11 +46,13 @@ const SocialLinkContainer = styled("div")(({ theme,marginTop }) => ({
   height: "25px",
   display: "flex",
   columnGap: "10px",
-  marginTop:marginTop
+  marginTop:marginTop,
+  fontFamily:"Poppins"
 }));
 const SocialLink = styled("a")(({ theme }) => ({
   listStyle: "none",
   backgroundColor: "transparent",
+  fontFamily:"Poppins",
   "&:active": {
     outline: 0,
     border: "none",

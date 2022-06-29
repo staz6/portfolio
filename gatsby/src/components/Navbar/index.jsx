@@ -23,6 +23,7 @@ const NavMenu = styled(Grid)(({ theme }) => ({
   textAlign:"right"
 }));
 const NavLink = styled("a")(({ theme }) => ({
+  fontFamily:"Poppins",
   position: "relative",
   display: "inline-block",
   verticalAlign: "top",

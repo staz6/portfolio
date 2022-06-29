@@ -10,11 +10,13 @@ export const MHeading = styled("h2")(
     color: type ? theme.palette[type] : theme.palette.main,
     fontSize: fontSize ? fontSize : "1.6rem",
     marginTop: marginTop,
-    letterSpacing:letterSpacing
+    letterSpacing:letterSpacing,
+    fontFamily:"Poppins"
   })
 );
 
 export const SubText = styled("p")(({ theme }) => ({
   color: theme.palette.subText,
   marginTop: "10px",
+  fontFamily:"Poppins"
 }));

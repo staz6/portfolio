@@ -8,6 +8,7 @@ const StyledButton = styled("button")(({ theme }) => ({
   fontSize: "0.9rem",
   textAlign: "center",
   letterSpacing: "4px",
+  fontFamily:"Poppins",
   color: theme.palette.blue,
   background: theme.palette.bg /* default color */,
   border: `2px solid ${theme.palette.blue}`,
