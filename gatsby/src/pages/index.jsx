@@ -5,6 +5,9 @@ import Navbar from "../components/Navbar";
 import Home from "./Home";
 
 const theme = createTheme({
+  typography: {
+    "fontFamily":"Poppins"
+  },
   palette: {
     blue: "#08fdd8",
     main: "#fff",
