@@ -42,7 +42,7 @@ const NavLink = styled("a")(({ theme }) => ({
     color: theme.palette.blue,
   },
 }));
-const links = ["Portfolio", "Contact", "Blog"];
+const links = ["Portfolio","Skills" ,"Contact", "Blog"];
 
 function index({handleSetTab}) {
   const GetLinks = () => {
