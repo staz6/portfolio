@@ -20,7 +20,7 @@ const Line = styled(VFlex)(({ theme }) => ({
 function index(props) {
   return (
     <>
-      <ContentContainer marginTop={props.marginTop}>
+      <ContentContainer marginTop={props.marginTop} >
         {props.children}
       </ContentContainer>
       <Line>

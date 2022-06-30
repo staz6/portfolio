@@ -36,19 +36,18 @@ export const companies = [
   {
     name: "QuantumHub",
     position: "Software Engineer",
-    desc: `Ut enim ad minima veniam, quis nostrum exercitationem ullam 
-    corporis suscipit laboriosam nisi ut aliquid. Ut enim ad minima.`,
+    desc: `QuantumHub is an engineering solutions provider specializing in digital 
+    transformation and systems integration with a variant vertical from industrial, retail, finance, and healthcare segments.`,
   },
   {
     name: "Nastech",
     position: "Full-stack Developer",
-    desc: `Ut enim ad minima veniam, quis nostrum exercitationem ullam 
-    corporis suscipit laboriosam nisi ut aliquid. Ut enim ad minima.`,
+    desc: `NASTECH is a leading IT solutions and services providing company. Specialized in ERP software development and management`,
   },
   {
     name: "Freelance",
     position: "DevOps Consultant",
-    desc: `Ut enim ad minima veniam, quis nostrum exercitationem ullam 
-    corporis suscipit laboriosam nisi ut aliquid. Ut enim ad minima.`,
+    desc: `A Freelance work I do on part time basis. Job responsiblites mainly include deploying resources to Azure Portal
+    and setting up various CI/CD pipeline for different resources.`,
   },
 ];

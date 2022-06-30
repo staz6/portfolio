@@ -31,14 +31,22 @@ const SubHeading = styled(SubText)(({ theme }) => ({
   fontFamily:"Poppins"
 }));
 const ObjectiveText = styled(SubText)(({ theme,fontSize,marginTop }) => ({
-  fontSize: fontSize ? fontSize : "0.9rem",
+  fontSize: fontSize ? fontSize : "1rem",
   lineHeight: "1.3rem",
   marginTop:marginTop ? marginTop : "10px",
-  fontFamily:"Poppins"
+  fontFamily:"Poppins",
+  fontWeight:"400"
 }));
 const Bar = styled('span')(({theme}) => ({
   color:theme.palette.blue,
   fontFamily:"Poppins"
+}))
+
+const TextLink = styled('a')(({theme}) => ({
+  color:theme.palette.blue,
+  fontFamily:"Poppins",
+  textDecoration:"none",
+  cursor:"pointer"
 }))
 
 const SocialLinkContainer = styled("div")(({ theme,marginTop }) => ({
@@ -81,6 +89,7 @@ const skills = [
   "HTML",
   "CSS",
   "ES5/ES6",
+  "Elastic search",
   "Git",
   "Docker",
   "Kubernetes",
@@ -99,11 +108,14 @@ const skills = [
 const Home = ({tab}) => {
   const footerRef = useRef(null)
   const blogRef = useRef(null)
+  const skillsRef = useRef(null)
   const executeScrollToFooter = () => footerRef.current.scrollIntoView() 
    const executeScrollToBlog = () => blogRef.current.scrollIntoView() 
+  const executeScrollToSkills = () => skillsRef.current.scrollIntoView()
   useEffect(() => {
     if(tab==="Contact") executeScrollToFooter()
     if(tab==="Blog") executeScrollToBlog()
+    if(tab==="Skills") executeScrollToSkills()
   },[tab])
    
   const [data, setData] = useState(tmpData);
@@ -143,7 +155,7 @@ const Home = ({tab}) => {
               <Bar><RubberBand text={"/"} /></Bar>
               <RubberBand text={"Theory behind my work"} />
             </MHeading>
-            <ObjectiveText>
+            <ObjectiveText >
               Hello beautiful people! I'm your programmer guy with a vast array
               of knowledge in many different front-end and back-end languages,
               Microservices and Monolithic architectures, Dockers/Kubernetes
@@ -165,19 +177,19 @@ const Home = ({tab}) => {
             <Bar>/</Bar>A Passionate Software Engineer
           </MHeading>
           <ObjectiveText>
-            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-            impedit quo minus id quod. Neque porro quisquam est qui dolorem
-            ipsum quia dolor sit amet.
+          I am a last year university student currently doing my BSCS from <TextLink target="_blank" href="https://www.iba.edu.pk/">Institute of Business Administration</TextLink>. 
+          I’m also an <TextLink target="_blank" href="https://www.aptechlearning.com/it/" >Aptech Certified Software Engineer</TextLink>. 
+          It's a 3 year diploma in which we learn everything about software development.
           </ObjectiveText>
           <ObjectiveText>
-            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-            impedit quo minus id quod. Neque porro quisquam est qui dolorem
-            ipsum quia dolor sit amet.
+          Over my 2 years of experience I have many opportunities to work in a vast spectrum of <TextLink onClick={executeScrollToSkills}>technologies</TextLink> that let me gather 
+          a significant amount of various experiences. 
+          Working on a vast variety of projects with amazing and ambitious people from around the globe.
           </ObjectiveText>
           <ObjectiveText>
-            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-            impedit quo minus id quod. Neque porro quisquam est qui dolorem
-            ipsum quia dolor sit amet.
+          I’m currently working remotely as a Full-stack web developer and DevOps consultant. 
+          You can find more about me on my <TextLink target="_blank"  href="https://www.linkedin.com/in/muhammad-aahad-568aaa179/">Linkedin </TextLink>
+          or can <TextLink  onClick={executeScrollToFooter}>Contact</TextLink> me directly.
           </ObjectiveText>
           <CustomButton text={"Contact me!"} onClick={executeScrollToFooter}/>
         </Grid>
@@ -198,31 +210,29 @@ const Home = ({tab}) => {
         })}
         <Fade parentId={"parent-div"} />
       </Grid>
-
-      <LineContainer marginTop={"8vh"}>
-        <Grid container spacing={2}>
+       
+      <LineContainer marginTop={"8vh"} r>
+        <Grid container spacing={2} ref={skillsRef}>
           <Grid item lg={6}>
             <MHeading fontSize={"2.8rem"} type={"blue"}>
               <RubberBand text={"Skills & Experience"} />
             </MHeading>
             <div style={{ width: "80%" }}>
               <ObjectiveText>
-                Nam libero tempore, cum soluta nobis est eligendi optio cumque
-                nihil impedit quo minus id quod. Neque porro quisquam est qui
-                dolorem ipsum quia dolor sit amet. Nam libero tempore, cum
-                soluta nobis est eligendi optio cumque nihil impedit quo minus
-                id quod. Neque porro quisquam est qui dolorem ipsum quia dolor
-                sit amet
+              I started my journey as a .NET Backend developer. My first project as a .Net Developer was to
+               create a School ERP based on microservices architecture.
+               I achieved this using RabbitMQ as my message broker and deploying the application using 
+               docker then later transitioning into Kubernetes cluster.
               </ObjectiveText>
               <ObjectiveText>
-                Nam libero tempore, cum soluta nobis est eligendi optio cumque
-                nihil impedit quo minus id quod. Neque porro quisquam est qui
-                dolorem ipsum quia dolor sit amet.
+              After that I quickly transition into a Full-stack developer learning React and 
+              Angular and handling various project development and assisting in any way I can.
+              The main area of my expertise is in web development I excel at creating web application of complex architecture   
               </ObjectiveText>
               <ObjectiveText>
-                Nam libero tempore, cum soluta nobis est eligendi optio cumque
-                nihil impedit quo minus id quod. Neque porro quisquam est qui
-                dolorem ipsum quia dolor sit amet.
+              I officially started my DevOps journey at the end of 2021. Throughout my DevOps journey I have become proficient 
+              in the usage of various platforms Like AWS, AzureDevOps and Azure Portal and have familiarized myself with different 
+              automation concepts and practices.
               </ObjectiveText>
             </div>
           </Grid>
