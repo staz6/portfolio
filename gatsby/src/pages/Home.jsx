@@ -183,8 +183,7 @@ const Home = ({tab}) => {
           </ObjectiveText>
           <ObjectiveText>
           Over my 2 years of experience I have many opportunities to work in a vast spectrum of <TextLink onClick={executeScrollToSkills}>technologies</TextLink> that let me gather 
-          a significant amount of various experiences. 
-          Working on a vast variety of projects with amazing and ambitious people from around the globe.
+          a significant amount of various experiences. This allow me to become experienced in the SDLC and how to present your product.
           </ObjectiveText>
           <ObjectiveText>
           I’m currently working remotely as a Full-stack web developer and DevOps consultant. 
