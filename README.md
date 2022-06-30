@@ -1,4 +1,4 @@
-# Project Title
+# Portfolio
 
 My portfolio website build using Gatsby and Sanity
 
@@ -25,6 +25,7 @@ DATA_SET=sanityDataSet
 - [x] Initial design
 - [x] Rubberband animation
 - [x] React 3d tab ball
+- [ ] Logo
 - [ ] Sanity Integeration
 - [ ] Blogs
 - [ ] Cursor animation
@@ -32,6 +33,7 @@ DATA_SET=sanityDataSet
 - [ ] Loading Screen
 - [ ] Div fade in and out animation
 - [ ] Domain name
+- [ ] SEO
 ## Authors
 
 Muhammad Aahad  
