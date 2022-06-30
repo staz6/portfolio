@@ -25,6 +25,7 @@ DATA_SET=sanityDataSet
 - [x] Initial design
 - [x] Rubberband animation
 - [x] React 3d tab ball
+- [ ] Logo
 - [ ] Sanity Integeration
 - [ ] Blogs
 - [ ] Cursor animation
