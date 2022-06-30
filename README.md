@@ -1,4 +1,4 @@
-# Project Title
+# Portfolio
 
 My portfolio website build using Gatsby and Sanity
 
