@@ -33,6 +33,7 @@ DATA_SET=sanityDataSet
 - [ ] Loading Screen
 - [ ] Div fade in and out animation
 - [ ] Domain name
+- [ ] SEO
 ## Authors
 
 Muhammad Aahad  
