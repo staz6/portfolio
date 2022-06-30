@@ -50,7 +50,7 @@ function index({handleSetTab}) {
       return (
         <NavLink
           key={key}
-          style={key === 2 ? { paddingRight: "0px" } : null}
+          style={key === 3 ? { paddingRight: "0px" } : null}
           onClick={(e)=>{handleSetTab(val)}}
         >
           {val}
