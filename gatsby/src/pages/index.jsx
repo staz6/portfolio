@@ -3,6 +3,7 @@ import * as React from "react";
 import MainLayout from "../layout/MainLayout";
 import Navbar from "../components/Navbar";
 import Home from "./Home";
+import Seo from "../components/Seo";
 
 const theme = createTheme({
   typography: {
@@ -31,6 +32,7 @@ const IndexPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <MainLayout>
+        <Seo/>
         <Navbar  handleSetTab={handleSetTab}/>
         <Home tab={tab}/>
       </MainLayout>
