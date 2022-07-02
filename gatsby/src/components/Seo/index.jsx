@@ -10,7 +10,7 @@ function Seo() {
             { name: 'keywords', content: 'Muhammad Aahad, Full-stack web developer, DevOps engineer, React, .Net, Nodejs' },
         ]}
         link={[
-            { rel: 'icon', type: 'image/png', href: `../../images/icon.png` },
+            { rel: 'icon', type: 'image/png', href: `../../images/icon.png` , sizes:"32x32" },
             {rel : 'apple-touch-icon', type:"image/png", href:"../../images/icon.png"}
         ]}
         />
