@@ -19,7 +19,7 @@ const Line = styled(VFlex)(({ theme }) => ({
 
 function index(props) {
   return (
-    <>
+    <div data-aos={props.aos}>
       <ContentContainer marginTop={props.marginTop} >
         {props.children}
       </ContentContainer>
@@ -32,7 +32,7 @@ function index(props) {
           );
         })}
       </Line>
-    </>
+    </div>
   );
 }
 

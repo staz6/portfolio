@@ -2,8 +2,9 @@
    v2.0-modified | 20110126
    License: none (public domain)
 */
+@import url('https://unpkg.com/aos@next/dist/aos.css');
 body {
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     margin:0px;
     font-family: "Poppins";
     /* color: #fff; */

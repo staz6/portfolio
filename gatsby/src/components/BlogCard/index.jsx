@@ -44,9 +44,16 @@ const ItemPaper = styled(Paper)(({ theme, colorCode }) => ({
   },
 }));
 
-function BlogCard({ val }) {
+function BlogCard({ val,index }) {
+  
+  const calcAos = (index) => {
+    let tmp=(index+1)%3
+    if(tmp===1) return "fade-right"
+    else if (tmp===2) return "fade-up"
+    else return "fade-left"
+  }
   return (
-    <Grid item lg={4} colorCode={val.color}>
+    <Grid item lg={4} colorCode={val.color} key={index} data-aos={calcAos(index)}>
       <ItemPaper colorCode={val.color}>
         <h4>{val.category}</h4>
         <h1>{val.title}</h1>

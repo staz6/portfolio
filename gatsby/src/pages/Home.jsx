@@ -12,6 +12,8 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import BlogCard from "../components/BlogCard";
 import { tmpData, companies } from "../helpers/data";
 import Fade from "../components/Fade";
+import Aos from 'aos'
+
 import SkillBar from "../components/SkillBar";
 
 const HeroSection = styled(VFlex)({
@@ -113,6 +115,9 @@ const Home = ({tab}) => {
    const executeScrollToBlog = () => blogRef.current.scrollIntoView() 
   const executeScrollToSkills = () => skillsRef.current.scrollIntoView()
   useEffect(() => {
+    Aos.init({duration:1000,once:true})
+  },[])
+  useEffect(() => {
     if(tab==="Contact") executeScrollToFooter()
     if(tab==="Blog") executeScrollToBlog()
     if(tab==="Skills") executeScrollToSkills()
@@ -123,12 +128,14 @@ const Home = ({tab}) => {
     <>
       <HeroSection>
         <Title>
+          <div data-aos="fade-down" >
           <RubberBand text={"Your Friendly Neighborhood Software Engineer"} />
-          <SubHeading>
+          </div>
+          <SubHeading data-aos="fade-right">
             Full stack Web Developer/ DevOps Consultant / Cyber Security
             Enthusiastic
           </SubHeading>
-          <SocialLinkContainer>
+          <SocialLinkContainer data-aos="fade-up">
             <SocialLink
               href="https://www.linkedin.com/in/muhammad-aahad-568aaa179/"
               target="_blank"
@@ -141,7 +148,7 @@ const Home = ({tab}) => {
           </SocialLinkContainer>
         </Title>
       </HeroSection>
-      <LineContainer>
+      <LineContainer aos={"fade-right"}>
         <Grid container spacing={2}>
           <Grid item lg={4}>
             <MHeading>
@@ -166,7 +173,7 @@ const Home = ({tab}) => {
           </Grid>
         </Grid>
       </LineContainer>
-      <Grid container style={{ marginTop: "10vh" }}>
+      <Grid container style={{ marginTop: "10vh" }} data-aos="flip-left">
         <Grid item lg={5}>
           <ObjectiveText>Software Engineer</ObjectiveText> <br />
           <MHeading fontSize={"2.8rem"} type={"blue"}>
@@ -198,19 +205,19 @@ const Home = ({tab}) => {
         </Grid>
         </Hidden>
       </Grid>
-      <MHeading fontSize={"2.8rem"} marginTop={"8vh"} type={"blue"} ref={blogRef}>
+      <MHeading fontSize={"2.8rem"} marginTop={"8vh"} type={"blue"} ref={blogRef} data-aos={"fade-right"}>
         <RubberBand text={"Blogs,"} />
       </MHeading>
       <br />
       <br />
       <Grid container spacing={3} style={{ position: "relative" }} >
-        {data.map((val, key) => {
-          return <BlogCard val={val} key={key} />;
+        {data.map((val, index) => {
+          return <BlogCard val={val} index={index} />;
         })}
         <Fade parentId={"parent-div"} />
       </Grid>
        
-      <LineContainer marginTop={"8vh"} r>
+      <LineContainer marginTop={"8vh"} aos={"fade-right"} >
         <Grid container spacing={2} ref={skillsRef}>
           <Grid item lg={6}>
             <MHeading fontSize={"2.8rem"} type={"blue"}>
@@ -270,7 +277,7 @@ const Home = ({tab}) => {
         </Grid>
       </LineContainer>
 
-      <Grid container style={{ marginTop: "8vh" }} spacing={2} ref={footerRef}>
+      <Grid container style={{ marginTop: "8vh" }} spacing={2} ref={footerRef} data-aos="fade-up">
         <MHeading fontSize={"3.5rem"} type={"blue"}>
           <RubberBand text={"Get in touch"} />
         </MHeading>
