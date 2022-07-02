@@ -12,6 +12,7 @@ const Container = styled(Grid)({
 const Link = styled("a")(({ theme }) => ({
   position: "relative",
   // float: 'left',
+  fontFamily:"Poppins",
   textDecoration: "none",
   color: theme.palette.main,
   fontSize: "1.3rem",

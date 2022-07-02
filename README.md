@@ -31,7 +31,7 @@ DATA_SET=sanityDataSet
 - [ ] Cursor animation
 - [ ] Background animation
 - [ ] Loading Screen
-- [ ] Div fade in and out animation
+- [x] Div fade in and out animation
 - [ ] Domain name
 - [ ] SEO
 ## Authors
@@ -43,6 +43,10 @@ Muhammad Aahad
 
 * 0.1
     * Initial Release
+* 0.2
+    * Div animation done
+    * Temperoray favicon added
+    * React Helm integerated
 
 ## Acknowledgments
 
