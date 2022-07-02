@@ -35,7 +35,7 @@ export const tmpData = [
 export const companies = [
   {
     name: "QuantumHub",
-    position: "Software Engineer",
+    position: "Full-stack Developer",
     desc: `QuantumHub is an engineering solutions provider specializing in digital 
     transformation and systems integration with a variant vertical from industrial, retail, finance, and healthcare segments.`,
   },
