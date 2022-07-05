@@ -276,7 +276,7 @@ const Home = ({tab}) => {
         </Grid>
       </LineContainer>
 
-      <Grid container style={{ marginTop: "8vh" }}  ref={footerRef} data-aos="flip-right">
+      <Grid container style={{ marginTop: "8vh",paddingBottom:"4vh" }}  ref={footerRef} data-aos="flip-right">
         <MHeading fontSize={"3.5rem"} type={"blue"}>
           <RubberBand text={"Get in touch"} />
         </MHeading>
