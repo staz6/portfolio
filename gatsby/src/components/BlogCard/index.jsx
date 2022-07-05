@@ -53,7 +53,7 @@ function BlogCard({ val,index }) {
     else return "fade-left"
   }
   return (
-    <Grid item lg={4} colorCode={val.color} key={index} data-aos={calcAos(index)}>
+    <Grid item lg={4} md={12} colorCode={val.color} key={index} data-aos={calcAos(index)}>
       <ItemPaper colorCode={val.color}>
         <h4>{val.category}</h4>
         <h1>{val.title}</h1>

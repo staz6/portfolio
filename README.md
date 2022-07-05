@@ -12,6 +12,7 @@ My portfolio website build using Gatsby and Sanity
 
 ### Installing
 
+* git clone the repository
 * cd in to gatsby folder and run ```npm install```
 * Also create an .env file at the root of the gatsby folder and insert to env variables in to it.
 ```
@@ -19,6 +20,11 @@ PROJECT_ID=sanityProjectId
 DATA_SET=sanityDataSet
 ```
 * run ```npm start```
+
+### Branches
+
+* [master](https://maahad.gatsbyjs.io/)
+* [develop](https://maahaddevelop.gatsbyjs.io/)
 
 ## Features List
 
@@ -34,6 +40,8 @@ DATA_SET=sanityDataSet
 - [x] Div fade in and out animation
 - [ ] Domain name
 - [ ] SEO
+- [ ] Unit tests
+- [x] Responsive
 ## Authors
 
 Muhammad Aahad  
@@ -55,3 +63,4 @@ Inspiration and code snippets
 * [JacekJeznach Porfolio](http://jacekjeznach.com/)
 * [3D Tag Ball](https://github.com/NiklasKnaack/jquery-svg3dtagcloud-plugin2)
 * [README Template](https://gist.github.com/DomPizzie/7a5ff55ffa9081f2de27c315f5018afc)
+* [Animate on scroll](https://www.npmjs.com/package/aos)

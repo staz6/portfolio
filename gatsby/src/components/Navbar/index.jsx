@@ -2,13 +2,25 @@ import React from "react";
 import { styled } from "@mui/material/styles";
 import { Grid } from "@mui/material";
 
-const Container = styled(Grid)({
+const Container = styled(Grid)(({theme}) => ({
   width: "100%",
   height: "8vh",
   justifyContent: "space-between",
   alignItems: "center",
   backgroundColor: "transparent",
-});
+  [theme.breakpoints.down("md")]:{
+    '& a':{
+      paddingRight:"29px"
+    }
+  },
+  [theme.breakpoints.down("sm")]:{
+    
+    textAlign:"center",
+    '& a':{
+      paddingRight:"29px"
+    }
+  }
+}));
 const Link = styled("a")(({ theme }) => ({
   position: "relative",
   // float: 'left',
@@ -16,6 +28,12 @@ const Link = styled("a")(({ theme }) => ({
   textDecoration: "none",
   color: theme.palette.main,
   fontSize: "1.3rem",
+  [theme.breakpoints.down("sm")]:{
+    paddingTop:"10px",
+    paddingBottom:"10px"
+  }
+  
+  
 }));
 
 const NavMenu = styled(Grid)(({ theme }) => ({
@@ -43,6 +61,10 @@ const NavLink = styled("a")(({ theme }) => ({
     color: theme.palette.blue,
   },
 }));
+const Bar = styled('span')(({theme}) => ({
+  color:theme.palette.blue,
+  fontFamily:"Poppins"
+}))
 const links = ["Portfolio","Skills" ,"Contact", "Blog"];
 
 function index({handleSetTab}) {
@@ -61,10 +83,10 @@ function index({handleSetTab}) {
   };
   return (
     <Container container>
-      <Grid item lg={6} md={6}>
-      <Link href="/">Muhammad Aahad</Link>
+      <Grid item lg={6} md={6} sm={6} xs={12}>
+      <Link href="/"><Bar>/</Bar> Muhammad Aahad</Link>
       </Grid>
-      <NavMenu item lg={6} md={6}>
+      <NavMenu item lg={6} md={6} sm={6} xs={12}>
         <GetLinks />
       </NavMenu>
     </Container>

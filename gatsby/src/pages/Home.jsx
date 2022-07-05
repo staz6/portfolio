@@ -1,20 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
-import { styled } from "@mui/material/styles";
-import { SubText, VFlex, MHeading } from "../helpers/styles";
-import { Hidden } from '@mui/material';
-import RubberBand from "../components/RubberBand";
-import LineContainer from "../components/LineContainer";
-import { Grid, Paper } from "@mui/material";
-import TagCloud from "../components/TagCloud";
-import CustomButton from "../components/CustomButton";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { Grid, Hidden } from '@mui/material';
+import { styled } from "@mui/material/styles";
+import Aos from 'aos';
+import React, { useEffect, useRef } from "react";
 import BlogCard from "../components/BlogCard";
-import { tmpData, companies } from "../helpers/data";
-import Fade from "../components/Fade";
-import Aos from 'aos'
-
+import CustomButton from "../components/CustomButton";
+import LineContainer from "../components/LineContainer";
+import RubberBand from "../components/RubberBand";
 import SkillBar from "../components/SkillBar";
+import TagCloud from "../components/TagCloud";
+import { companies, tmpData } from "../helpers/data";
+import { MHeading, SubText, VFlex } from "../helpers/styles";
+
 
 const HeroSection = styled(VFlex)({
   height: "45vh",
@@ -115,7 +113,7 @@ const Home = ({tab}) => {
    const executeScrollToBlog = () => blogRef.current.scrollIntoView() 
   const executeScrollToSkills = () => skillsRef.current.scrollIntoView()
   useEffect(() => {
-    Aos.init({duration:1000,once:true})
+    Aos.init({duration:1000,once:true,disable: 'mobile'})
   },[])
   useEffect(() => {
     if(tab==="Contact") executeScrollToFooter()
@@ -123,7 +121,8 @@ const Home = ({tab}) => {
     if(tab==="Skills") executeScrollToSkills()
   },[tab])
    
-  const [data, setData] = useState(tmpData);
+  // const [data, setData] = useState(tmpData);
+  const data=tmpData;
   return (
     <>
       <HeroSection>
@@ -214,7 +213,7 @@ const Home = ({tab}) => {
         {data.map((val, index) => {
           return <BlogCard val={val} index={index} />;
         })}
-        <Fade parentId={"parent-div"} />
+        {/* <Fade parentId={"parent-div"} /> */}
       </Grid>
        
       <LineContainer marginTop={"8vh"} aos={"fade-right"} >
@@ -277,7 +276,7 @@ const Home = ({tab}) => {
         </Grid>
       </LineContainer>
 
-      <Grid container style={{ marginTop: "8vh" }} spacing={2} ref={footerRef} data-aos="fade-up">
+      <Grid container style={{ marginTop: "8vh" }}  ref={footerRef} data-aos="flip-right">
         <MHeading fontSize={"3.5rem"} type={"blue"}>
           <RubberBand text={"Get in touch"} />
         </MHeading>
