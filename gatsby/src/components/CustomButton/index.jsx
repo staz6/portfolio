@@ -8,12 +8,12 @@ const StyledButton = styled("button")(({ theme }) => ({
   fontSize: "0.9rem",
   textAlign: "center",
   letterSpacing: "4px",
-  fontFamily:"Poppins",
-  color: theme.palette.blue,
+  fontFamily: "Poppins",
+  color: theme.palette.primary.main,
   background: theme.palette.bg /* default color */,
-  border: `2px solid ${theme.palette.blue}`,
+  border: `2px solid ${theme.palette.primary.main}`,
 
-  background: `linear-gradient(to left, ${theme.palette.bg} 50%, ${theme.palette.blue} 50%) right`,
+  background: `linear-gradient(to left, ${theme.palette.bg} 50%, ${theme.palette.primary.main} 50%) right`,
   backgroundSize: "200%",
   transition: "0.3s ease-out",
   "&:hover": {
@@ -23,8 +23,16 @@ const StyledButton = styled("button")(({ theme }) => ({
   },
 }));
 
-function CustomButton({ text,onClick }) {
-  return <StyledButton onClick={(e)=>{return onClick()}}>{text}</StyledButton>;
+function CustomButton({ text, onClick }) {
+  return (
+    <StyledButton
+      onClick={(e) => {
+        return onClick();
+      }}
+    >
+      {text}
+    </StyledButton>
+  );
 }
 
 export default CustomButton;

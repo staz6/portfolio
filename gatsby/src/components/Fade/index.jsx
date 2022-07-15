@@ -13,7 +13,11 @@ const FadeDiv = styled("div")(({ theme }) => ({
 function Fade({ parentId }) {
   return (
     <FadeDiv>
-      <p style={{ color: "#aeaeae", fontSize: "1.2rem",fontFamily:"Poppins" }}>Coming soon...</p>
+      <p
+        style={{ color: "#aeaeae", fontSize: "1.2rem", fontFamily: "Poppins" }}
+      >
+        Coming soon...
+      </p>
     </FadeDiv>
   );
 }

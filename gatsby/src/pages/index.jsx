@@ -7,11 +7,13 @@ import Seo from "../components/Seo";
 
 const theme = createTheme({
   typography: {
-    "fontFamily":"Poppins"
+    fontFamily: "Poppins",
   },
   palette: {
-    blue: "#08fdd8",
-    main: "#fff",
+    primary:{
+      main:"#08fdd8",
+      secondary:"#fff"
+    },
     subText: "#aeaeae",
     bg: "#1d1d1d",
   },
@@ -24,17 +26,17 @@ const theme = createTheme({
 
 // markup
 const IndexPage = () => {
-  const [tab,setTab] =React.useState("Portfolio")
+  const [tab, setTab] = React.useState("Portfolio");
 
   const handleSetTab = (value) => {
-    setTab(value)
-  }
+    setTab(value);
+  };
   return (
     <ThemeProvider theme={theme}>
       <MainLayout>
-        <Seo/>
-        <Navbar  handleSetTab={handleSetTab}/>
-        <Home tab={tab}/>
+        <Seo />
+        <Navbar handleSetTab={handleSetTab} />
+        <Home tab={tab} />
       </MainLayout>
     </ThemeProvider>
   );

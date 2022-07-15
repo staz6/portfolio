@@ -6,7 +6,7 @@ const ItemPaper = styled(Paper)(({ theme, colorCode }) => ({
   padding: "3rem 3rem 2.5rem",
   // backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
-  fontFamily:"Poppins",
+  fontFamily: "Poppins",
   // padding: theme.spacing(1),
   // textAlign: 'center',
   minHeight: "20vh",
@@ -36,7 +36,7 @@ const ItemPaper = styled(Paper)(({ theme, colorCode }) => ({
     textDecoration: "none",
 
     "&:hover": {
-      color: theme.palette.blue,
+      color: theme.palette.primary.main,
     },
   },
   "& p": {
@@ -44,16 +44,22 @@ const ItemPaper = styled(Paper)(({ theme, colorCode }) => ({
   },
 }));
 
-function BlogCard({ val,index }) {
-  
+function BlogCard({ val, index }) {
   const calcAos = (index) => {
-    let tmp=(index+1)%3
-    if(tmp===1) return "fade-right"
-    else if (tmp===2) return "fade-up"
-    else return "fade-left"
-  }
+    let tmp = (index + 1) % 3;
+    if (tmp === 1) return "fade-right";
+    else if (tmp === 2) return "fade-up";
+    else return "fade-left";
+  };
   return (
-    <Grid item lg={4} md={12} colorCode={val.color} key={index} data-aos={calcAos(index)}>
+    <Grid
+      item
+      lg={4}
+      md={12}
+      colorCode={val.color}
+      key={index}
+      data-aos={calcAos(index)}
+    >
       <ItemPaper colorCode={val.color}>
         <h4>{val.category}</h4>
         <h1>{val.title}</h1>
