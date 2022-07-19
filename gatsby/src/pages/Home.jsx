@@ -12,6 +12,7 @@ import PortfolioCard from "../components/PortfolioCard";
 import RubberBand from "../components/RubberBand";
 import SkillBar from "../components/SkillBar";
 import TagCloud from "../components/TagCloud";
+import Fade from "../components/Fade";
 import { companies, tmpData } from "../helpers/data";
 import { CenterContainer, MHeading, SubText, VFlex } from "../helpers/styles";
 
@@ -133,7 +134,7 @@ const Home = ({ tab }) => {
   // const [data, setData] = useState(tmpData);
   const data = tmpData;
 
-   const getAllProjects = useStaticQuery(graphql`
+   const getAllProjectsQuery = useStaticQuery(graphql`
    {allSanityProject {
     edges {
       node {
@@ -155,7 +156,7 @@ const Home = ({ tab }) => {
   }}
 `)
 
-  console.log(getAllProjects)
+  const allProjects=getAllProjectsQuery.allSanityProject.edges
 
   return (
     <>
@@ -281,7 +282,11 @@ const Home = ({ tab }) => {
         >
           <RubberBand text={"Portfolio"} />
         </MHeading>
-        <PortfolioCard/>
+        {
+          allProjects.map((val,key)=>(
+            <PortfolioCard val={val.node} key={key}/>
+          ))
+        }
       </CenterContainer>
       </PortFolioContainer>
 
@@ -301,7 +306,7 @@ const Home = ({ tab }) => {
           {data.map((val, index) => {
             return <BlogCard val={val} index={index} />;
           })}
-          {/* <Fade parentId={"parent-div"} /> */}
+          <Fade parentId={"parent-div"} />
         </Grid>
 
         <LineContainer marginTop={"8vh"} aos={"fade-right"}>

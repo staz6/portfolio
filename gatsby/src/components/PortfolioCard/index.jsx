@@ -37,42 +37,44 @@ const List = styled('ul')(({theme})=>({
     }
 }))
 
-function PortfolioCard() {
+function PortfolioCard({val,key}) {
+    console.log(val)
     return (
-        <Grid container style={{marginTop:"2vh"}}>
+        <Grid container style={{marginTop:"2vh"}} key={key}>
             <Grid item lg={7} md={7}>
                 <ProjectTitle>
-                    Project title       
+                    {val.name}     
                 </ProjectTitle>
                 <ProjectSubText fontWeight={400}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius arcu vel nibh sollicitudin gravida. 
-                Duis id mi a felis sollicitudin maximus sed at magna. Fusce efficitur leo metus, 
-                sed congue nisi sollicitudin ut. Vestibulum rutrum fringilla bibendum. Cras auctor 
-                urna non est tincidunt semper. Vestibulum ante ipsum primis in faucibus orci luctus 
-                et ultrices posuere cubilia curae; Cras magna neque, rutrum tincidunt ipsum ac
+                {val.desc}
+                </ProjectSubText>
+                <ProjectSubText fontWeight={400}>
+                {val.responsiblity}
                 </ProjectSubText>
                 <ProjectSubTitle >
                     Achievments:
                 </ProjectSubTitle>
                 <List>
-                    <li>
+                    {
+                        val.achievments.map((v,k)=>(
+                            <li key={k}>
                     <ProjectSubText fontWeight={400}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius arcu vel nibh sollicitudin gravida. 
-                Duis id mi a felis sollicitudin maximus sed at magna. Fusce efficitur leo metu
+                    {v}
                     </ProjectSubText>
                     </li>
-                    <li>
-                    <ProjectSubText fontWeight={400}>
-                        Achivment two
-                    </ProjectSubText>
-                    </li>
+                        ))
+                    }
+                   
                 </List>
             </Grid>
             <Grid item lg={5} md={5}>
                 <Carousel height={"400px"}>
-                    <img src={"https://images.unsplash.com/photo-1649840910927-90cb7c15a8ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1411&q=80"} alt={"logo"}/>
-                    <img src={"https://images.unsplash.com/photo-1657652936041-5765e8ca17f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"} alt="Logo"/>
-                    <img src={"https://images.unsplash.com/photo-1657622185369-a5a0190f151e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"} alt="Logo"/>
+                    {
+                        val.projectImage.map((i,k)=>(
+                            
+                            <img src={i.asset.gatsbyImageData.images.fallback.src} alt={val.alt}/>
+                        ))
+                    }
                 </Carousel>
             </Grid>
         </Grid>
