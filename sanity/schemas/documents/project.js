@@ -56,24 +56,8 @@ export default{
             name:"projectImage",
             title:"Project Image",
             type:"array",
-            of:[
-                {
-                    title: 'Project Images',
-                    type: 'object',
-                    fields: [
-                      {
-                        title: 'Image',
-                        name: 'image',
-                        type: 'image'
-                      } ,
-                      {
-                        title: 'Title',
-                        name: 'title',
-                        type: 'string'
-                      } 
-                    ]
-                  }
-            ]
+            of: [{type: 'customImage'}]
+            
         }
     ]
 }
