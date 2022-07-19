@@ -12,16 +12,19 @@ const theme = createTheme({
   palette: {
     primary:{
       main:"#08fdd8",
-      secondary:"#fff"
+      secondary:"#fff",
+      projectHeading:"#131214",
+      projectSubtext:"#6c6c6c",
+      subText: "#aeaeae",
     },
-    subText: "#aeaeae",
+    blogs: {
+      net: "#a62dd8",
+      react: "#61dafb",
+      htb: "#bbff34",
+    },
     bg: "#1d1d1d",
   },
-  blogs: {
-    net: "#a62dd8",
-    react: "#61dafb",
-    htb: "#bbff34",
-  },
+  
 });
 
 // markup

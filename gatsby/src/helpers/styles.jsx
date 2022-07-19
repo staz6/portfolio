@@ -16,12 +16,12 @@ export const MHeading = styled("h2")(
     fontSize: fontSize ? fontSize : "1.6rem",
     marginTop: marginTop,
     letterSpacing: letterSpacing,
-    fontFamily: "Poppins",
+    fontFamily: "theme.typography.fontFamily",
   })
 );
 
 export const SubText = styled("p")(({ theme }) => ({
-  color: theme.palette.subText,
+  color: theme.palette.primary.subText,
   marginTop: "10px",
-  fontFamily: "Poppins",
+  fontFamily: "theme.typography.fontFamily",
 }));

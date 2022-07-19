@@ -1,5 +1,6 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import{graphql,useStaticQuery} from 'gatsby'
 import { Grid, Hidden } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Aos from "aos";
@@ -7,6 +8,7 @@ import React, { useEffect, useRef } from "react";
 import BlogCard from "../components/BlogCard";
 import CustomButton from "../components/CustomButton";
 import LineContainer from "../components/LineContainer";
+import PortfolioCard from "../components/PortfolioCard";
 import RubberBand from "../components/RubberBand";
 import SkillBar from "../components/SkillBar";
 import TagCloud from "../components/TagCloud";
@@ -21,39 +23,40 @@ const HeroSection = styled(VFlex)({
 const Title = styled("h1")(({ theme }) => ({
   color: theme.palette.primary.secondary,
   fontSize: "3rem",
-  fontFamily: "Poppins",
+  fontFamily: "theme.typography.fontFamily",
 }));
 const SubHeading = styled(SubText)(({ theme }) => ({
   fontSize: "20px",
   marginTop: "10px",
   marginLeft: "4px",
-  fontFamily: "Poppins",
+  fontFamily: "theme.typography.fontFamily",
 }));
 const ObjectiveText = styled(SubText)(({ theme, fontSize, marginTop }) => ({
   fontSize: fontSize ? fontSize : "1rem",
   lineHeight: "1.3rem",
   marginTop: marginTop ? marginTop : "10px",
-  fontFamily: "Poppins",
+  fontFamily: "theme.typography.fontFamily",
   fontWeight: "400",
 }));
 const Bar = styled("span")(({ theme }) => ({
   color: theme.palette.primary.main,
-  fontFamily: "Poppins",
+  fontFamily: "theme.typography.fontFamily",
 }));
 
 const TextLink = styled("a")(({ theme }) => ({
   color: theme.palette.primary.main,
-  fontFamily: "Poppins",
+  fontFamily: "theme.typography.fontFamily",
   textDecoration: "none",
   cursor: "pointer",
 }));
 
-// const PortFolioContainer = styled("div")(({theme})=>({
-//   width:"100%",
-//   backgroundColor:"#fff",
-//   paddingTop:"8vh",
-//   paddingBottom:"8vh"
-// }))
+const PortFolioContainer = styled("div")(({theme})=>({
+  width:"100%",
+  backgroundColor:"#fff",
+  paddingTop:"8vh",
+  paddingBottom:"8vh",
+  marginTop:"8vh"
+}))
 
 const SocialLinkContainer = styled("div")(({ theme, marginTop }) => ({
   width: "200px",
@@ -61,12 +64,12 @@ const SocialLinkContainer = styled("div")(({ theme, marginTop }) => ({
   display: "flex",
   columnGap: "10px",
   marginTop: marginTop,
-  fontFamily: "Poppins",
+  fontFamily: "theme.typography.fontFamily",
 }));
 const SocialLink = styled("a")(({ theme }) => ({
   listStyle: "none",
   backgroundColor: "transparent",
-  fontFamily: "Poppins",
+  fontFamily: "theme.typography.fontFamily",
   "&:active": {
     outline: 0,
     border: "none",
@@ -129,6 +132,31 @@ const Home = ({ tab }) => {
 
   // const [data, setData] = useState(tmpData);
   const data = tmpData;
+
+   const getAllProjects = useStaticQuery(graphql`
+   {allSanityProject {
+    edges {
+      node {
+        id
+        webUrl
+        techStack
+        responsiblity
+        name
+        desc
+        achievments
+        projectImage {
+          alt
+          asset {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+  }}
+`)
+
+  console.log(getAllProjects)
+
   return (
     <>
       <CenterContainer>
@@ -243,7 +271,7 @@ const Home = ({ tab }) => {
         </Grid>
       </CenterContainer>
 
-      {/* <PortFolioContainer>
+      <PortFolioContainer>
       <CenterContainer>
         <MHeading
           fontSize={"2.8rem"}
@@ -253,8 +281,9 @@ const Home = ({ tab }) => {
         >
           <RubberBand text={"Portfolio"} />
         </MHeading>
+        <PortfolioCard/>
       </CenterContainer>
-      </PortFolioContainer> */}
+      </PortFolioContainer>
 
       <CenterContainer>
         <MHeading
