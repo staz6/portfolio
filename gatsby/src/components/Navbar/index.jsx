@@ -24,7 +24,7 @@ const Container = styled(Grid)(({ theme }) => ({
 const Link = styled("a")(({ theme }) => ({
   position: "relative",
   // float: 'left',
-  fontFamily: "Poppins",
+  fontFamily: "theme.typography.fontFamily",
   textDecoration: "none",
   color: theme.palette.primary.secondary,
   fontSize: "1.3rem",
@@ -40,7 +40,7 @@ const NavMenu = styled(Grid)(({ theme }) => ({
   textAlign: "right",
 }));
 const NavLink = styled("a")(({ theme }) => ({
-  fontFamily: "Poppins",
+  fontFamily: "theme.typography.fontFamily",
   position: "relative",
   display: "inline-block",
   verticalAlign: "top",
@@ -61,7 +61,7 @@ const NavLink = styled("a")(({ theme }) => ({
 }));
 const Bar = styled("span")(({ theme }) => ({
   color: theme.palette.primary.main,
-  fontFamily: "Poppins",
+  fontFamily: "theme.typography.fontFamily",
 }));
 const links = ["Portfolio", "Skills", "Contact", "Blog"];
 

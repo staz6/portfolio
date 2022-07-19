@@ -14,7 +14,7 @@ function Fade({ parentId }) {
   return (
     <FadeDiv>
       <p
-        style={{ color: "#aeaeae", fontSize: "1.2rem", fontFamily: "Poppins" }}
+        style={{ color: "#aeaeae", fontSize: "1.2rem", fontFamily: "theme.typography.fontFamily" }}
       >
         Coming soon...
       </p>

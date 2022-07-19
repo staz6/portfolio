@@ -8,7 +8,7 @@ const Chart = styled("div")(({ theme, width, color }) => ({
     fontSize: "18px",
     marginBottom: "7px",
     display: "block",
-    fontFamily: "Poppins",
+    fontFamily: "theme.typography.fontFamily",
   },
   "& footer": {
     backgroundColor: "#373737",

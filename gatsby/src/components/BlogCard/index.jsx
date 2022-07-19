@@ -6,7 +6,7 @@ const ItemPaper = styled(Paper)(({ theme, colorCode }) => ({
   padding: "3rem 3rem 2.5rem",
   // backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
-  fontFamily: "Poppins",
+  fontFamily: "theme.typography.fontFamily",
   // padding: theme.spacing(1),
   // textAlign: 'center',
   minHeight: "20vh",
@@ -40,7 +40,7 @@ const ItemPaper = styled(Paper)(({ theme, colorCode }) => ({
     },
   },
   "& p": {
-    color: theme.palette.subText,
+    color: theme.palette.primary.subText,
   },
 }));
 

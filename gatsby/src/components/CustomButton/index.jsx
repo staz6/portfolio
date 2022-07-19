@@ -8,9 +8,9 @@ const StyledButton = styled("button")(({ theme }) => ({
   fontSize: "0.9rem",
   textAlign: "center",
   letterSpacing: "4px",
-  fontFamily: "Poppins",
+  fontFamily: "theme.typography.fontFamily",
   color: theme.palette.primary.main,
-  background: theme.palette.bg /* default color */,
+  // background: theme.palette.bg /* default color */,
   border: `2px solid ${theme.palette.primary.main}`,
 
   background: `linear-gradient(to left, ${theme.palette.bg} 50%, ${theme.palette.primary.main} 50%) right`,

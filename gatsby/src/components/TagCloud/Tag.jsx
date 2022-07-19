@@ -20,7 +20,7 @@ export default class Tag extends React.Component {
       lineHeight: "50px",
       fontSize: "20px",
       textDecoration: "none",
-      fontFamily: "Poppins",
+      fontFamily: "theme.typography.fontFamily",
     };
 
     const otherStyle = {
