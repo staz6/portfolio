@@ -29,7 +29,7 @@ const theme = createTheme({
 
 // markup
 const IndexPage = () => {
-  const [tab, setTab] = React.useState("Portfolio");
+  const [tab, setTab] = React.useState("");
 
   const handleSetTab = (value) => {
     setTab(value);

@@ -1,8 +1,7 @@
-import { Grid } from '@mui/material'
+import { Grid } from '@mui/material';
 import { styled } from "@mui/material/styles";
-import Carousel from 'react-material-ui-carousel'
-import React from 'react'
-import { TextLink } from '../../helpers/styles';
+import React from 'react';
+import Carousel from 'react-material-ui-carousel';
 
 
 const ProjectTitle = styled('a')(({theme})=>({
@@ -62,9 +61,9 @@ function PortfolioCard({val,index}) {
         if(tmp%2!==0) return false
         return true
     }
-    console.log(val)
+    const position = getPosition(index)
     return (
-        <ParentContainer container position={getPosition(index)} columnGap={5}>
+        <ParentContainer container position={position} columnGap={5} data-aos={position ? "fade-right": "fade-left"}>
             <Grid item lg={6} md={6}>
                 <ProjectTitle target="_blank" href={val.webUrl}>
                     {val.name}  

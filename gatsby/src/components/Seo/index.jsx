@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 function Seo() {
   return (
     <Helmet
-      title="Muhammad Aahad | Portfolio Website"
+      title="Muhammad Aahad | Full-stack Web Developer | DevOps Engineer"
       meta={[
         { name: "description", content: "Muhammad Aahad portfolio website" },
         {

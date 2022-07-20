@@ -1,18 +1,18 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import{graphql,useStaticQuery} from 'gatsby'
 import { Grid, Hidden } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Aos from "aos";
+import { graphql, useStaticQuery } from 'gatsby';
 import React, { useEffect, useRef } from "react";
 import BlogCard from "../components/BlogCard";
 import CustomButton from "../components/CustomButton";
+import Fade from "../components/Fade";
 import LineContainer from "../components/LineContainer";
 import PortfolioCard from "../components/PortfolioCard";
 import RubberBand from "../components/RubberBand";
 import SkillBar from "../components/SkillBar";
 import TagCloud from "../components/TagCloud";
-import Fade from "../components/Fade";
 import { companies, tmpData } from "../helpers/data";
 import { CenterContainer, MHeading, SubText, TextLink, VFlex } from "../helpers/styles";
 
@@ -110,13 +110,16 @@ const skills = [
   "SQL",
   "NoSQL",
 ];
+
 const Home = ({ tab }) => {
   const footerRef = useRef(null);
   const blogRef = useRef(null);
   const skillsRef = useRef(null);
+  const portfolioRef=useRef(null);
   const executeScrollToFooter = () => footerRef.current.scrollIntoView();
   const executeScrollToBlog = () => blogRef.current.scrollIntoView();
   const executeScrollToSkills = () => skillsRef.current.scrollIntoView();
+  const executeScrollToPortfolio = () => portfolioRef.current.scrollIntoView()
   useEffect(() => {
     Aos.init({ duration: 1000, once: true, disable: "mobile" });
   }, []);
@@ -124,6 +127,7 @@ const Home = ({ tab }) => {
     if (tab === "Contact") executeScrollToFooter();
     if (tab === "Blog") executeScrollToBlog();
     if (tab === "Skills") executeScrollToSkills();
+    if (tab==="Portfolio")executeScrollToPortfolio();
   }, [tab]);
 
   // const [data, setData] = useState(tmpData);
@@ -274,6 +278,7 @@ const Home = ({ tab }) => {
           marginTop={"8vh"}
           type={"main"}
           data-aos={"fade-right"}
+          ref={portfolioRef}
         >
           <RubberBand text={"Portfolio"} />
         </MHeading>
