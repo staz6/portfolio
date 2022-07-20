@@ -50,6 +50,13 @@ const ParentContainer = styled(Grid)(({theme,position})=>({
     textAlign:position ? 'right' : 'left'
 }))
 
+const ImageContainer = styled(Grid)(({theme})=>({
+    [theme.breakpoints.down("md")]:{
+        marginTop:"1vh",
+        width:"100%"
+    }
+}))
+
 const Image = styled('img')(({theme})=>({
     width:"100%",
     height:"100%"
@@ -90,7 +97,7 @@ function PortfolioCard({val,index}) {
                    
                 </List> */}
             </Grid>
-            <Grid item lg={5} md={5}>
+            <ImageContainer item lg={5} md={5}>
                 <Carousel height={"400px"}>
                     {
                         val.projectImage.map((i,k)=>(
@@ -99,7 +106,7 @@ function PortfolioCard({val,index}) {
                         ))
                     }
                 </Carousel>
-            </Grid>
+            </ImageContainer>
         </ParentContainer>
     )
 }
