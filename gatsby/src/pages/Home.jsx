@@ -134,7 +134,7 @@ const Home = ({ tab }) => {
   const data = tmpData;
 
    const getAllProjectsQuery = useStaticQuery(graphql`
-   {allSanityProject {
+   {allSanityProject(sort: { fields: [_createdAt], order: ASC }) {
     edges {
       node {
         id
@@ -142,6 +142,7 @@ const Home = ({ tab }) => {
         techStack
         responsiblity
         name
+        _createdAt
         desc
         achievments
         projectImage {
@@ -154,9 +155,8 @@ const Home = ({ tab }) => {
     }
   }}
 `)
-
+  
   const allProjects=getAllProjectsQuery.allSanityProject.edges
-
   return (
     <>
       <CenterContainer>
