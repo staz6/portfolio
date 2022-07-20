@@ -25,3 +25,10 @@ export const SubText = styled("p")(({ theme }) => ({
   marginTop: "10px",
   fontFamily: "theme.typography.fontFamily",
 }));
+
+export const TextLink = styled("a")(({ theme }) => ({
+  color: theme.palette.primary.main,
+  fontFamily: "theme.typography.fontFamily",
+  textDecoration: "none",
+  cursor: "pointer",
+}));

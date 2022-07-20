@@ -14,7 +14,7 @@ import SkillBar from "../components/SkillBar";
 import TagCloud from "../components/TagCloud";
 import Fade from "../components/Fade";
 import { companies, tmpData } from "../helpers/data";
-import { CenterContainer, MHeading, SubText, VFlex } from "../helpers/styles";
+import { CenterContainer, MHeading, SubText, TextLink, VFlex } from "../helpers/styles";
 
 const HeroSection = styled(VFlex)({
   height: "45vh",
@@ -44,12 +44,7 @@ const Bar = styled("span")(({ theme }) => ({
   fontFamily: "theme.typography.fontFamily",
 }));
 
-const TextLink = styled("a")(({ theme }) => ({
-  color: theme.palette.primary.main,
-  fontFamily: "theme.typography.fontFamily",
-  textDecoration: "none",
-  cursor: "pointer",
-}));
+
 
 const PortFolioContainer = styled("div")(({theme})=>({
   width:"100%",
@@ -283,11 +278,12 @@ const Home = ({ tab }) => {
           <RubberBand text={"Portfolio"} />
         </MHeading>
         {
-          allProjects.map((val,key)=>(
-            <PortfolioCard val={val.node} key={key}/>
+          allProjects.map((val,index)=>(
+            <PortfolioCard val={val.node} index={index}/>
           ))
         }
       </CenterContainer>
+
       </PortFolioContainer>
 
       <CenterContainer>

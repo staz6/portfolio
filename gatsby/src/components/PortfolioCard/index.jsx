@@ -2,13 +2,19 @@ import { Grid } from '@mui/material'
 import { styled } from "@mui/material/styles";
 import Carousel from 'react-material-ui-carousel'
 import React from 'react'
+import { TextLink } from '../../helpers/styles';
 
 
-const ProjectTitle = styled('h2')(({theme})=>({
+const ProjectTitle = styled('a')(({theme})=>({
     fontFamily:theme.typography.fontFamily,
     color:theme.palette.primary.projectHeading,
     fontSize:"2rem",
     lineHeight:"4rem",
+    textDecoration:"none",
+    cursor:"pointer",
+    "&:hover":{
+        color:theme.palette.primary.main
+    }
     
 }))
 const ProjectSubText = styled('p')(({theme,fontWeight,marginTop})=>({
@@ -16,7 +22,7 @@ const ProjectSubText = styled('p')(({theme,fontWeight,marginTop})=>({
     color:theme.palette.primary.projectSubtext,
     fontSize:"1rem",
     lineHeight:"1.2rem",
-    width:"90%",
+    // width:"90%",
     fontWeight:fontWeight,
     marginTop:marginTop
 }))
@@ -25,6 +31,7 @@ const ProjectSubTitle = styled('h2')(({theme})=>({
     color:theme.palette.primary.projectHeading,
     fontSize:"1.1rem",
     lineHeight:"2rem",
+    
     
 }))
 
@@ -37,18 +44,35 @@ const List = styled('ul')(({theme})=>({
     }
 }))
 
-function PortfolioCard({val,key}) {
+const ParentContainer = styled(Grid)(({theme,position})=>({
+    justifyContent:"space-between",
+    marginTop:"6vh",
+    flexDirection:position ? 'row-reverse' : 'row',
+    textAlign:position ? 'right' : 'left'
+}))
+
+const Image = styled('img')(({theme})=>({
+    width:"100%",
+    height:"100%"
+}))
+
+function PortfolioCard({val,index}) {
+    const getPosition = (i) => {
+        let tmp = i+1;
+        if(tmp%2!==0) return false
+        return true
+    }
     console.log(val)
     return (
-        <Grid container style={{marginTop:"2vh"}} key={key}>
-            <Grid item lg={7} md={7}>
-                <ProjectTitle>
-                    {val.name}     
+        <ParentContainer container position={getPosition(index)} columnGap={5}>
+            <Grid item lg={6} md={6}>
+                <ProjectTitle target="_blank" href={val.webUrl}>
+                    {val.name}  
                 </ProjectTitle>
                 <ProjectSubText fontWeight={400}>
                 {val.desc}
                 </ProjectSubText>
-                <ProjectSubText fontWeight={400}>
+                {/* <ProjectSubText fontWeight={400}>
                 {val.responsiblity}
                 </ProjectSubText>
                 <ProjectSubTitle >
@@ -65,19 +89,19 @@ function PortfolioCard({val,key}) {
                         ))
                     }
                    
-                </List>
+                </List> */}
             </Grid>
             <Grid item lg={5} md={5}>
                 <Carousel height={"400px"}>
                     {
                         val.projectImage.map((i,k)=>(
                             
-                            <img src={i.asset.gatsbyImageData.images.fallback.src} alt={val.alt}/>
+                            <Image src={i.asset.gatsbyImageData.images.fallback.src} alt={val.alt}/>
                         ))
                     }
                 </Carousel>
             </Grid>
-        </Grid>
+        </ParentContainer>
     )
 }
 
