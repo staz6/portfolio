@@ -13,6 +13,18 @@ module.exports = {
       "dataset": process.env.DATA_SET
     }
   },{
+    resolve: `gatsby-plugin-google-gtag`,
+    options: {
+      // You can add multiple tracking ids and a pageview event will be fired for all of them.
+      trackingIds: [
+        process.env.GTAG_ID
+      ],
+      
+      
+    },
+  }
+  
+  ,{
     resolve: `gatsby-plugin-material-ui`,
     options: {
       stylesProvider: {

@@ -32,9 +32,9 @@ export default class Tag extends React.Component {
     };
 
     return (
-      <a href={"#"} style={{ ...tagStyle, ...otherStyle }}>
+      <p  style={{ ...tagStyle, ...otherStyle }}>
         {this.props.name}
-      </a>
+      </p>
     );
   }
 }
