@@ -351,12 +351,17 @@ const Home = ({ tab }) => {
               <SkillBar
                 text={"DevOps"}
                 color={"rgb(210, 108, 213)"}
-                width={"70%"}
+                width={"50%"}
               />
               <SkillBar
-                text={"Cyber Security"}
-                color={"#bbff34"}
-                width={"50%"}
+                text={"React"}
+                color={"#61dafb"}
+                width={"80%"}
+              />
+              <SkillBar
+                text={".NET"}
+                color={"#a62dd8"}
+                width={"60%"}
               />
             </Grid>
 
