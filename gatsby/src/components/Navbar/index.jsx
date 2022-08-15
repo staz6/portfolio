@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
-import { Grid } from "@mui/material";
+import { Grid,useMediaQuery } from "@mui/material";
 import { CenterContainer } from "../../helpers/styles";
-
+import { useTheme } from "@emotion/react";
+import ResponsiveNavbar from './ResponsiveNavbar'
 const Container = styled(Grid)(({ theme }) => ({
   width: "100%",
   height: "8vh",
@@ -14,12 +15,12 @@ const Container = styled(Grid)(({ theme }) => ({
       paddingRight: "29px",
     },
   },
-  [theme.breakpoints.down("sm")]: {
-    textAlign: "center",
-    "& a": {
-      paddingRight: "29px",
-    },
-  },
+  // [theme.breakpoints.down("sm")]: {
+  //   textAlign: "center",
+  //   "& a": {
+  //     paddingRight: "29px",
+  //   },
+  // },
 }));
 const Link = styled("a")(({ theme }) => ({
   position: "relative",
@@ -28,10 +29,10 @@ const Link = styled("a")(({ theme }) => ({
   textDecoration: "none",
   color: theme.palette.primary.secondary,
   fontSize: "1.3rem",
-  [theme.breakpoints.down("sm")]: {
-    paddingTop: "10px",
-    paddingBottom: "10px",
-  },
+  // [theme.breakpoints.down("sm")]: {
+  //   paddingTop: "10px",
+  //   paddingBottom: "10px",
+  // },
 }));
 
 const NavMenu = styled(Grid)(({ theme }) => ({
@@ -65,36 +66,44 @@ const Bar = styled("span")(({ theme }) => ({
 }));
 const links = ["Portfolio", "Skills", "Contact", "Blog"];
 
-function index({ handleSetTab }) {
-  const GetLinks = () => {
-    return links.map((val, key) => {
-      return (
-        <NavLink
-          key={key}
-          style={key === 3 ? { paddingRight: "0px" } : null}
-          onClick={(e) => {
-            handleSetTab(val);
-          }}
-        >
-          {val}
-        </NavLink>
-      );
-    });
-  };
+const GetLinks = ({handleSetTab}) => {
+  return links.map((val, key) => {
+    return (
+      <NavLink
+        key={key}
+        style={key === 3 ? { paddingRight: "0px" } : null}
+        onClick={(e) => {
+          handleSetTab(val);
+        }}
+      >
+        {val}
+      </NavLink>
+    );
+  });
+};
+
+
+function Navbar({ handleSetTab }) {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const [openDrawer, setOpenDrawer] = useState(false);
+  
+
   return (
     <CenterContainer>
       <Container container>
-        <Grid item lg={6} md={6} sm={6} xs={12}>
+        <Grid item lg={6} md={6} sm={6} xs={10}>
           <Link href="/">
             <Bar>/</Bar> Muhammad Aahad
           </Link>
         </Grid>
-        <NavMenu item lg={6} md={6} sm={6} xs={12}>
-          <GetLinks />
-        </NavMenu>
+        {isMobile ? <ResponsiveNavbar handleSetTab={handleSetTab}/> :
+        <NavMenu item lg={6} md={6} sm={6} xs={2}>
+        <GetLinks handleSetTab={handleSetTab} />
+      </NavMenu>}
       </Container>
     </CenterContainer>
   );
 }
 
-export default index;
+export default Navbar;
