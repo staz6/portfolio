@@ -19,13 +19,14 @@ import { CenterContainer, MHeading, SubText, TextLink, VFlex } from "../helpers/
 const HeroSection = styled(VFlex)({
   height: "45vh",
   width: "100%",
-  overflowX:"hidden"
+  overflow:"hidden"
 });
 
 const Title = styled("h1")(({ theme }) => ({
   color: theme.palette.primary.secondary,
   fontSize: "3rem",
   fontFamily: "theme.typography.fontFamily",
+  overflow:"hidden"
 }));
 const SubHeading = styled(SubText)(({ theme }) => ({
   fontSize: "20px",
