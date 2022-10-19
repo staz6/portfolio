@@ -19,6 +19,7 @@ import { CenterContainer, MHeading, SubText, TextLink, VFlex } from "../helpers/
 const HeroSection = styled(VFlex)({
   height: "45vh",
   width: "100%",
+  overflowX:"hidden"
 });
 
 const Title = styled("h1")(({ theme }) => ({
@@ -120,9 +121,9 @@ const Home = ({ tab }) => {
   const executeScrollToBlog = () => blogRef.current.scrollIntoView();
   const executeScrollToSkills = () => skillsRef.current.scrollIntoView();
   const executeScrollToPortfolio = () => portfolioRef.current.scrollIntoView()
-  // useEffect(() => {
-  //   Aos.init({ duration: 1000, once: true, disable: "mobile" });
-  // }, []);
+  useEffect(() => {
+    Aos.init({ duration: 1000, once: true, disable: "mobile" });
+  }, []);
   useEffect(() => {
     if (tab === "Contact") executeScrollToFooter();
     if (tab === "Blog") executeScrollToBlog();
@@ -168,8 +169,7 @@ const Home = ({ tab }) => {
               />
             </div>
             <SubHeading data-aos="fade-right">
-              Full stack Web Developer/ DevOps Consultant / Cyber Security
-              Enthusiastic
+              Full stack Web Developer/ DevOps Engineer
             </SubHeading>
             <SocialLinkContainer data-aos="fade-up">
               <SocialLink
@@ -206,8 +206,8 @@ const Home = ({ tab }) => {
                 Hello beautiful people! I'm your programmer guy with a vast
                 array of knowledge in many different front-end and back-end
                 languages, Microservices and Monolithic architectures,
-                Dockers/Kubernetes containers, Databases, DevOps and
-                Cybersecurity. I love everything coding. So, if there is problem
+                Dockers/Kubernetes containers, Databases, DevOps.
+                I love everything coding. So, if there is problem
                 that could be solve through it then I can provide you the
                 solution for it.
               </ObjectiveText>

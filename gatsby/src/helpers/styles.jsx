@@ -4,6 +4,7 @@ export const CenterContainer = styled("div")(({ theme }) => ({
   width: "90%",
   marginLeft: "auto",
   marginRight: "auto",
+  overflow:"hidden"
 }));
 export const VFlex = styled("div")({
   display: "flex",
