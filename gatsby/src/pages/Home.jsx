@@ -16,17 +16,16 @@ import TagCloud from "../components/TagCloud";
 import { companies, tmpData } from "../helpers/data";
 import { CenterContainer, MHeading, SubText, TextLink, VFlex } from "../helpers/styles";
 
-const HeroSection = styled(VFlex)({
-  height: "45vh",
+const HeroSection = styled('div')({
   width: "100%",
-  overflow:"hidden"
+  marginTop:"13vh",
+  marginBottom:"13vh"
 });
 
 const Title = styled("h1")(({ theme }) => ({
   color: theme.palette.primary.secondary,
   fontSize: "3rem",
   fontFamily: "theme.typography.fontFamily",
-  overflow:"hidden"
 }));
 const SubHeading = styled(SubText)(({ theme }) => ({
   fontSize: "20px",
@@ -189,10 +188,11 @@ const Home = ({ tab }) => {
                 text={"Your Friendly Neighborhood Software Engineer"}
               />
             </div>
-            <SubHeading data-aos="fade-right">
+          </Title>
+          <SubHeading data-aos="fade-right">
               Full stack Web Developer/ DevOps Engineer
             </SubHeading>
-            <SocialLinkContainer data-aos="fade-up">
+          <SocialLinkContainer data-aos="fade-up">
               <SocialLink
                 href="https://www.linkedin.com/in/muhammad-aahad-568aaa179/"
                 target="_blank"
@@ -203,7 +203,6 @@ const Home = ({ tab }) => {
                 <GitHubIcon className={"icon"} />
               </SocialLink>
             </SocialLinkContainer>
-          </Title>
         </HeroSection>
         <LineContainer aos={"fade-right"}>
           <Grid container spacing={2}>
