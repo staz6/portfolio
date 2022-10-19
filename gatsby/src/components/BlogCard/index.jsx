@@ -1,4 +1,4 @@
-import { Grid, Paper } from "@mui/material";
+import { Grid, Link, Paper } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import React from "react";
 
@@ -51,21 +51,25 @@ function BlogCard({ val, index }) {
     else if (tmp === 2) return "fade-up";
     else return "fade-left";
   };
+  function openInNewTab(url) {
+    window.open(url, '_blank')
+  }
   return (
     <Grid
       item
       lg={4}
       md={12}
       colorCode={val.color}
-      key={index}
+      onClick={(e)=>openInNewTab(val.blogUrl)}
+      key={val._id}
       data-aos={calcAos(index)}
+      style={{cursor:"pointer"}}
     >
       <ItemPaper colorCode={val.color}>
         <h4>{val.category}</h4>
         <h1>{val.title}</h1>
         <p>
-          Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-          impedit quo minus...{" "}
+          {val.desc}{" "}
         </p>
       </ItemPaper>
     </Grid>

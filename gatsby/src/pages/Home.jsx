@@ -134,7 +134,7 @@ const Home = ({ tab }) => {
   // const [data, setData] = useState(tmpData);
   const data = tmpData;
 
-   const getAllProjectsQuery = useStaticQuery(graphql`
+   const query = useStaticQuery(graphql`
    {allSanityProject(sort: { fields: [_createdAt], order: ASC }) {
     edges {
       node {
@@ -154,10 +154,30 @@ const Home = ({ tab }) => {
         }
       }
     }
-  }}
+  }
+  allSanityBlog(sort: {order: DESC, fields: _createdAt}) {
+    edges {
+      node {
+        _id
+        title
+        category
+        blogUrl
+        color
+        desc
+        _createdAt
+      }
+    }
+  }
+}
 `)
+
+
+
   
-  const allProjects=getAllProjectsQuery.allSanityProject.edges
+  
+  const allProjects=query.allSanityProject.edges
+  const allBlogs = query.allSanityBlog.edges
+  console.log(allBlogs)
   return (
     <>
       <CenterContainer>
@@ -304,10 +324,10 @@ const Home = ({ tab }) => {
         <br />
         <br />
         <Grid container spacing={3} style={{ position: "relative" }}>
-          {data.map((val, index) => {
-            return <BlogCard val={val} index={index} />;
+          {allBlogs.map((val, index) => {
+            return <BlogCard val={val.node} index={index}  />;
           })}
-          <Fade parentId={"parent-div"} />
+          {/* <Fade parentId={"parent-div"} /> */}
         </Grid>
 
         <LineContainer marginTop={"8vh"} aos={"fade-right"}>
