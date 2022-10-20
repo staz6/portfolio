@@ -122,9 +122,9 @@ const Home = ({ tab }) => {
   const executeScrollToBlog = () => blogRef.current.scrollIntoView();
   const executeScrollToSkills = () => skillsRef.current.scrollIntoView();
   const executeScrollToPortfolio = () => portfolioRef.current.scrollIntoView()
-  // useEffect(() => {
-    
-  // }, []);
+  useEffect(() => {
+    Aos.refresh();
+  }, []);
   useEffect(() => {
     if (tab === "Contact") executeScrollToFooter();
     if (tab === "Blog") executeScrollToBlog();
