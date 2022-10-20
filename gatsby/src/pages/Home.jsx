@@ -113,7 +113,7 @@ const skills = [
 ];
 
 const Home = ({ tab }) => {
-  Aos.init({ duration: 1000, once: true, disable: "mobile" });
+  
   const footerRef = useRef(null);
   const blogRef = useRef(null);
   const skillsRef = useRef(null);
@@ -123,6 +123,7 @@ const Home = ({ tab }) => {
   const executeScrollToSkills = () => skillsRef.current.scrollIntoView();
   const executeScrollToPortfolio = () => portfolioRef.current.scrollIntoView()
   useEffect(() => {
+    Aos.init({ duration: 1000, once: true, disable: "mobile" });
     Aos.refresh();
   }, []);
   useEffect(() => {

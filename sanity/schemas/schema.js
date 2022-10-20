@@ -6,6 +6,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // document schemas
 import project from './documents/project'
+import blog from './documents/blog'
 
 // object schemas
 import customImage from './objects/customImage'
@@ -20,7 +21,7 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     project,
-
+    blog,
 
     //object type
     customImage
