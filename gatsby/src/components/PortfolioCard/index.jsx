@@ -4,7 +4,7 @@ import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 
 
-const ProjectTitle = styled('a')(({theme})=>({
+const ProjectTitle = styled('p')(({theme})=>({
     fontFamily:theme.typography.fontFamily,
     color:theme.palette.primary.projectHeading,
     fontSize:"2rem",
@@ -72,7 +72,7 @@ function PortfolioCard({val,index}) {
     return (
         <ParentContainer container position={position} columnGap={5} data-aos={position ? "fade-right": "fade-left"}>
             <Grid item lg={6} md={6}>
-                <ProjectTitle target="_blank" href={val.webUrl}>
+                <ProjectTitle >
                     {val.name}  
                 </ProjectTitle>
                 <ProjectSubText fontWeight={400}>

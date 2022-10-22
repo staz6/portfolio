@@ -179,7 +179,6 @@ const Home = ({ tab }) => {
   
   const allProjects=query.allSanityProject.edges
   const allBlogs = query.allSanityBlog.edges
-  console.log(allBlogs)
   return (
     <>
       <CenterContainer>
