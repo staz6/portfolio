@@ -85,7 +85,7 @@ const GetLinks = ({handleSetTab}) => {
 
 function Navbar({ handleSetTab }) {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [openDrawer, setOpenDrawer] = useState(false);
   
 

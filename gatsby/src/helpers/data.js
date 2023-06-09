@@ -34,6 +34,11 @@ export const tmpData = [
 
 export const companies = [
   {
+    name: "MK-Consulting",
+    position: "Full-stack Developer",
+    desc: `MK-Consulting is a software consulting company that provide vendor based services to many multinational organization.`,
+  },
+  {
     name: "QuantumHub",
     position: "Full-stack Developer",
     desc: `QuantumHub is an engineering solutions provider specializing in digital 
@@ -41,13 +46,8 @@ export const companies = [
   },
   {
     name: "Nastech",
-    position: "Full-stack Developer",
+    position: ".NET Developer",
     desc: `NASTECH is a leading IT solutions and services providing company. Specialized in ERP software development and management`,
   },
-  {
-    name: "Freelance",
-    position: "DevOps Consultant",
-    desc: `A Freelance work I do on part time basis. Job responsiblites mainly include deploying resources to Azure Portal
-    and setting up various CI/CD pipeline for different resources.`,
-  },
+  
 ];

@@ -123,8 +123,8 @@ const Home = ({ tab }) => {
   const executeScrollToSkills = () => skillsRef.current.scrollIntoView();
   const executeScrollToPortfolio = () => portfolioRef.current.scrollIntoView()
   useEffect(() => {
-    Aos.init({ duration: 1000, once: true, disable: "mobile" });
-    Aos.refresh();
+    Aos.init({ once: true, disable: "mobile" });
+    // Aos.refresh();
   }, []);
   useEffect(() => {
     if (tab === "Contact") executeScrollToFooter();
@@ -184,8 +184,9 @@ const Home = ({ tab }) => {
       <CenterContainer>
         <HeroSection>
           <Title>
-            <div data-aos="fade-down">
+            <div data-aos="fade-down" >
               <RubberBand
+                onLoad={true}
                 text={"Your Friendly Neighborhood Software Engineer"}
               />
             </div>
@@ -246,7 +247,7 @@ const Home = ({ tab }) => {
               <Bar>/</Bar>A Passionate Software Engineer
             </MHeading>
             <ObjectiveText>
-              I am a last year university student currently doing my BSCS from{" "}
+              I am a recent university graduate who completed his BSCS from{" "}
               <TextLink target="_blank" href="https://www.iba.edu.pk/">
                 Institute of Business Administration
               </TextLink>
@@ -261,7 +262,7 @@ const Home = ({ tab }) => {
               software development.
             </ObjectiveText>
             <ObjectiveText>
-              Over my 2 years of experience I have many opportunities to work in
+              Over my 2+ years of experience I have many opportunities to work in
               a vast spectrum of{" "}
               <TextLink onClick={executeScrollToSkills}>technologies</TextLink>{" "}
               that let me gather a significant amount of various experiences.
@@ -423,7 +424,7 @@ const Home = ({ tab }) => {
                 /Address
               </MHeading>
               <ObjectiveText fontSize="1.2rem" marginTop="2vh">
-                Tariq-bin-zyad Karachi Pakistan
+                Karachi Pakistan
               </ObjectiveText>
             </Grid>
             <Grid item lg={4}>
