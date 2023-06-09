@@ -211,18 +211,18 @@ const Home = ({ tab }) => {
             <Grid item lg={4}>
               <MHeading>
                 <Bar>
-                  <RubberBand text={"/"} />
+                  <RubberBand onLoad={true} text={"/"} />
                 </Bar>
-                <RubberBand text={"Objective"} />
+                <RubberBand onLoad={true} text={"Objective"} />
               </MHeading>
               <ObjectiveText>To provide solution</ObjectiveText>
             </Grid>
             <Grid item lg={6}>
               <MHeading>
                 <Bar>
-                  <RubberBand text={"/"} />
+                  <RubberBand onLoad={true} text={"/"} />
                 </Bar>
-                <RubberBand text={"Theory behind my work"} />
+                <RubberBand onLoad={true} text={"Theory behind my work"} />
               </MHeading>
               <ObjectiveText>
                 Hello beautiful people! I'm your programmer guy with a vast
